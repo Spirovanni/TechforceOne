@@ -24,13 +24,13 @@ import { AuthModule } from '../@auth/auth.module';
 //   SearchInputComponent,
 //   TinyMCEComponent,
 // } from './components';
-// import {
-//   CapitalizePipe,
-//   PluralPipe,
-//   RoundPipe,
-//   TimingPipe,
-//   NumberWithCommasPipe,
-// } from './pipes';
+import {
+  CapitalizePipe,
+  PluralPipe,
+  RoundPipe,
+  TimingPipe,
+  NumberWithCommasPipe,
+} from './pipes';
 import {
   OneColumnLayoutComponent,
   ThreeColumnsLayoutComponent,
@@ -67,13 +67,13 @@ const COMPONENTS = [
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
 ];
-// const PIPES = [
-//   CapitalizePipe,
-//   PluralPipe,
-//   RoundPipe,
-//   TimingPipe,
-//   NumberWithCommasPipe,
-// ];
+const PIPES = [
+  CapitalizePipe,
+  PluralPipe,
+  RoundPipe,
+  TimingPipe,
+  NumberWithCommasPipe,
+];
 
 @NgModule({
   imports: [
@@ -82,12 +82,12 @@ const COMPONENTS = [
     ...NB_MODULES],
   exports: [
     CommonModule,
-    // ...PIPES,
+    ...PIPES,
     ...COMPONENTS
   ],
   declarations: [
     ...COMPONENTS,
-    // ...PIPES
+    ...PIPES
   ],
 })
 export class ThemeModule {

@@ -38,11 +38,13 @@ export class NgxLoginComponent implements OnInit {
   errors: string[] = [];
   messages: string[] = [];
   user: any = {};
-  submitted: boolean = false;
+  submitted = false;
   loginForm: FormGroup;
-  alive: boolean = true;
+  alive = true;
 
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   get email() { return this.loginForm.get('email'); }
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   get password() { return this.loginForm.get('password'); }
 
   constructor(protected service: NbAuthService,
@@ -57,12 +59,14 @@ export class NgxLoginComponent implements OnInit {
     const emailValidators = [
       Validators.pattern(EMAIL_PATTERN),
     ];
+    // eslint-disable-next-line @typescript-eslint/unbound-method,no-unused-expressions
     this.isEmailRequired && emailValidators.push(Validators.required);
 
     const passwordValidators = [
       Validators.minLength(this.minLength),
       Validators.maxLength(this.maxLength),
     ];
+    // eslint-disable-next-line @typescript-eslint/unbound-method,no-unused-expressions
     this.isPasswordRequired && passwordValidators.push(Validators.required);
 
     this.loginForm = this.fb.group({
@@ -89,6 +93,7 @@ export class NgxLoginComponent implements OnInit {
 
       const redirect = result.getRedirect();
       if (redirect) {
+        // eslint-disable-next-line @typescript-eslint/no-misused-promises
         setTimeout(() => {
           return this.router.navigateByUrl(redirect);
         }, this.redirectDelay);

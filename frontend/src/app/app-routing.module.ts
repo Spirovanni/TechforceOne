@@ -7,6 +7,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {LoginComponent} from './login/login.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {AuthGuard} from './auth.guard';
+import {HomeComponent} from './home/home.component'
 import {FaqComponent} from './faq/faq.component';
 import {HabitFormComponent} from './habit-form/habit-form.component';
 import {HabitListComponent} from './habit-list/habit-list.component';
@@ -31,6 +32,11 @@ import {AdminGuard} from './admin.guard';
 const routes: Routes = [
   {
     path: '', redirectTo: 'dashboard', pathMatch: 'full',
+    runGuardsAndResolvers: 'always'
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
     runGuardsAndResolvers: 'always'
   },
   {

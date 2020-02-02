@@ -6,6 +6,7 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { ThemeModule } from './@theme/theme.module';
+import { AuthModule } from './@auth/auth.module';
 
 import {
   DashboardComponent,
@@ -119,7 +120,10 @@ export function tokenGetter() {
     ReactiveFormsModule,
     MatDialogModule,
     FormsModule,
+
     ThemeModule.forRoot(),
+    AuthModule.forRoot(),
+
     JwtModule.forRoot({
       config: {
         tokenGetter,

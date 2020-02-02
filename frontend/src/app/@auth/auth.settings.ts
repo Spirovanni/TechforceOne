@@ -62,10 +62,10 @@ export const authOptions = {
   ],
   forms: {
     login: {
-      socialLinks: socialLinks,
+      socialLinks,
     },
     register: {
-      socialLinks: socialLinks,
+      socialLinks,
     },
   },
 };

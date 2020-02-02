@@ -16,7 +16,7 @@ import {
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbSecurityModule } from '@nebular/security';
-// import { AuthModule } from '../@auth/auth.module';
+import { AuthModule } from '../@auth/auth.module';
 
 // import {
 //   FooterComponent,
@@ -78,7 +78,7 @@ const NB_MODULES = [
 @NgModule({
   imports: [
     CommonModule,
-    // AuthModule,
+    AuthModule,
     ...NB_MODULES],
   exports: [
     CommonModule,

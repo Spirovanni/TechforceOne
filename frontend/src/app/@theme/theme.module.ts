@@ -31,17 +31,17 @@ import { AuthModule } from '../@auth/auth.module';
 //   TimingPipe,
 //   NumberWithCommasPipe,
 // } from './pipes';
-// import {
-//   OneColumnLayoutComponent,
-//   ThreeColumnsLayoutComponent,
-//   TwoColumnsLayoutComponent,
-// } from './layouts';
-// import { InitUserService } from './services/init-user.service';
+import {
+  OneColumnLayoutComponent,
+  ThreeColumnsLayoutComponent,
+  TwoColumnsLayoutComponent,
+} from './layouts';
+import { InitUserService } from './services/init-user.service';
 //
-// import { DEFAULT_THEME } from './styles/theme.default';
-// import { COSMIC_THEME } from './styles/theme.cosmic';
-// import { CORPORATE_THEME } from './styles/theme.corporate';
-// import { DARK_THEME } from './styles/theme.dark';
+import { DEFAULT_THEME } from './styles/theme.default';
+import { COSMIC_THEME } from './styles/theme.cosmic';
+import { CORPORATE_THEME } from './styles/theme.corporate';
+import { DARK_THEME } from './styles/theme.dark';
 
 const NB_MODULES = [
   NbLayoutModule,
@@ -58,15 +58,15 @@ const NB_MODULES = [
   NbSpinnerModule,
   NbEvaIconsModule,
 ];
-// const COMPONENTS = [
+const COMPONENTS = [
 //   HeaderComponent,
 //   FooterComponent,
 //   SearchInputComponent,
 //   TinyMCEComponent,
-//   OneColumnLayoutComponent,
-//   ThreeColumnsLayoutComponent,
-//   TwoColumnsLayoutComponent,
-// ];
+  OneColumnLayoutComponent,
+  ThreeColumnsLayoutComponent,
+  TwoColumnsLayoutComponent,
+];
 // const PIPES = [
 //   CapitalizePipe,
 //   PluralPipe,
@@ -83,10 +83,10 @@ const NB_MODULES = [
   exports: [
     CommonModule,
     // ...PIPES,
-    // ...COMPONENTS
+    ...COMPONENTS
   ],
   declarations: [
-    // ...COMPONENTS,
+    ...COMPONENTS,
     // ...PIPES
   ],
 })
@@ -101,10 +101,10 @@ export class ThemeModule {
             name: 'default',
           },
           [
-            // DEFAULT_THEME, COSMIC_THEME, CORPORATE_THEME, DARK_THEME
+            DEFAULT_THEME, COSMIC_THEME, CORPORATE_THEME, DARK_THEME
           ],
         ).providers,
-        // InitUserService,
+        InitUserService,
       ],
     };
   }

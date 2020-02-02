@@ -98,6 +98,7 @@ export function filterInterceptorRequest(req: HttpRequest<any>): boolean {
 })
 export class AuthModule {
   static forRoot(): ModuleWithProviders {
+    // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
     return <ModuleWithProviders>{
       ngModule: AuthModule,
       providers: [

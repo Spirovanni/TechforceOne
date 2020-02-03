@@ -6,6 +6,7 @@ import {ThemeModule} from '../@theme/theme.module';
 import {HomeMenu} from './home-menu';
 import {NbMenuModule} from '@nebular/theme';
 import {AuthModule} from '../@auth/auth.module';
+import { HeroComponent } from './hero/hero.component';
 
 const HOME_COMPONENTS = [
   HomeComponent,
@@ -23,6 +24,7 @@ const HOME_COMPONENTS = [
   ],
   declarations: [
     ...HOME_COMPONENTS,
+    HeroComponent,
   ],
   providers: [
     HomeMenu,

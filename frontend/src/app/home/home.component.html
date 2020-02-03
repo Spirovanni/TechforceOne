@@ -1,5 +1,6 @@
-<ngx-one-column-layout>
+<ngx-one-column-layout *ngIf="userService.hasPermission('HabitRabbit.view_habit')">
   <nb-menu [items]="menu"></nb-menu>
   <p>Running...</p>
+  <app-hero></app-hero>
 <!--  <router-outlet></router-outlet>-->
 </ngx-one-column-layout>

@@ -1,5 +1,6 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { takeWhile } from 'rxjs/operators';
+import {UserService} from '../service/user.service';
 import { NbTokenService } from '@nebular/auth';
 import { NbMenuItem } from '@nebular/theme';
 import { HomeMenu } from './home-menu';
@@ -10,14 +11,16 @@ import { InitUserService } from '../@theme/services/init-user.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnDestroy {
+export class HomeComponent implements OnDestroy, OnInit {
 
   menu: NbMenuItem[];
   alive = true;
+  isLoggedIn = false;
 
   constructor(
     private homeMenu: HomeMenu,
     private tokenService: NbTokenService,
+    private userService: UserService,
     protected initUserService: InitUserService,
   ) {
     this.initMenu();
@@ -36,6 +39,11 @@ export class HomeComponent implements OnDestroy {
       .subscribe(menu => {
         this.menu = menu;
       });
+  }
+  ngOnInit(): void{
+    this.userService.isLoggedIn.subscribe((isLoggedIn) => {
+      this.isLoggedIn = isLoggedIn;
+    });
   }
   ngOnDestroy(): void {
     this.alive = false;

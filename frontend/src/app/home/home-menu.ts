@@ -12,13 +12,15 @@ export class HomeMenu {
         icon: 'shopping-cart-outline',
         link: '/pages/dashboard',
         home: true,
-        // children: undefined,
+        // eslint-disable-next-line id-blacklist
+        children: undefined,
       },
       {
         title: 'IoT Dashboard',
         icon: 'home-outline',
         link: '/pages/iot-dashboard',
-        // children: undefined,
+        // eslint-disable-next-line id-blacklist
+        children: undefined,
       },
     ];
 

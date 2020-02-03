@@ -1,7 +1,7 @@
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   ~ dashboard.component.html Copyright ©️ 2020 by the HabitRabbit developers (ardianq, lachchri16, sweiland, YellowIcicle).
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-<!--<app-navbar></app-navbar>-->
+<app-navbar *ngIf="isLoggedIn"></app-navbar>
 <div *ngIf="userService.hasPermission('HabitRabbit.view_habit')" class="grid-container">
   <h1 class="mat-h1">Dashboard
     <button (click)="generatePdf()" class="exportPDF" color="primary" mat-raised-button type="submit">Export Profile

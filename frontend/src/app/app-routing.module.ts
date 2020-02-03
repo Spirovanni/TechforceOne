@@ -3,11 +3,11 @@
  ******************************************************************************/
 
 import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import {ExtraOptions, RouterModule, Routes} from '@angular/router';
 import {LoginComponent} from './login/login.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {AuthGuard} from './auth.guard';
-import {HomeComponent} from './home/home.component'
+import {HomeModule} from './home/home.module'
 import {FaqComponent} from './faq/faq.component';
 import {HabitFormComponent} from './habit-form/habit-form.component';
 import {HabitListComponent} from './habit-list/habit-list.component';
@@ -36,8 +36,10 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent,
-    runGuardsAndResolvers: 'always'
+    runGuardsAndResolvers: 'always',
+    // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+    loadChildren: () => import('./home/home.module')
+      .then(m => m.HomeModule),
   },
   {
     path: 'register', component: RegisterComponent,
@@ -121,8 +123,12 @@ const routes: Routes = [
 
 ];
 
+const config: ExtraOptions = {
+  useHash: false,
+};
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, config)],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

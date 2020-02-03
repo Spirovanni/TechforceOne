@@ -38,6 +38,8 @@ export class DashboardComponent implements OnInit {
 
   curveStepAfter: any = d3.curveBasis;
 
+  isLoggedIn = false;
+
   // options
   gradient = true;
   showLegend = true;
@@ -132,6 +134,9 @@ export class DashboardComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.userService.isLoggedIn.subscribe((isLoggedIn) => {
+      this.isLoggedIn = isLoggedIn;
+    });
     this.breakpoint = 2;
     const data: Data = this.route.snapshot.data;
     if (data.typeOptions) {

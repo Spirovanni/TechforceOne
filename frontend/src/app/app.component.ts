@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
   constructor(private userService: UserService, private profilePictureService: ProfilePictureService) {
   }
 
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   ngOnInit() {
     this.userService.isLoggedIn.subscribe((isLoggedIn) => {
       this.isLoggedIn = isLoggedIn;

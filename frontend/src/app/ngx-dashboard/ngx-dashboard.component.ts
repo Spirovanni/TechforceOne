@@ -698,13 +698,13 @@ export interface HabitDialogData {
 }
 
 @Component({
-  selector: 'app-dashboard-habitedit.component',
+  selector: 'ngx-app-dashboard-habitedit.component',
   templateUrl: 'dashboard-habitedit.component.html',
 })
-export class DashboardHabitEditComponent {
+export class NgxDashboardHabitEditComponent {
 
   constructor(
-    public dialogRef: MatDialogRef<DashboardHabitEditComponent>,
+    public dialogRef: MatDialogRef<NgxDashboardHabitEditComponent>,
     @Inject(MAT_DIALOG_DATA) public data: HabitDialogData) {
   }
 
@@ -747,10 +747,10 @@ export interface DialogData {
   templateUrl: 'password-change-dash.component.html',
 })
 // tslint:disable-next-line:component-class-suffix
-export class PasswordChangeComponentDash {
+export class NgxPasswordChangeComponentDash {
 
   constructor(
-    public dialogRef: MatDialogRef<PasswordChangeComponentDash>,
+    public dialogRef: MatDialogRef<NgxPasswordChangeComponentDash>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {
   }
 
@@ -776,10 +776,10 @@ export interface UserData {
   selector: 'app-user-info.component',
   templateUrl: 'user-info.component.html',
 })
-export class UserDataChangeComponent {
+export class NgxUserDataChangeComponent {
 
   constructor(
-    public dialogRef: MatDialogRef<UserDataChangeComponent>,
+    public dialogRef: MatDialogRef<NgxUserDataChangeComponent>,
     @Inject(MAT_DIALOG_DATA) public data: UserData) {
   }
 

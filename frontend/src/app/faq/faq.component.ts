@@ -14,6 +14,8 @@ import {UserService} from '../service/user.service';
 })
 export class FaqComponent implements OnInit {
 
+  isLoggedIn = false;
+
   list: FaqItem[] = [];
   faqItem: FaqItem;
 

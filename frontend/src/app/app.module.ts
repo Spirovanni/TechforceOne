@@ -15,14 +15,6 @@ import {
   UserDataChangeComponent
 } from './dashboard/dashboard.component';
 
-import {
-  NgxDashboardComponent,
-  NgxDashboardHabitEditComponent,
-  NgxPasswordChangeComponentDash,
-  NgxUserDataChangeComponent
-} from './ngx-dashboard/ngx-dashboard.component';
-
-
 import {FaqComponent} from './faq/faq.component';
 import {HabitFormComponent} from './habit-form/habit-form.component';
 import {HabitListComponent} from './habit-list/habit-list.component';
@@ -86,7 +78,6 @@ export function tokenGetter() {
   declarations: [
     AppComponent,
     DashboardComponent,
-    NgxDashboardComponent,
     FaqComponent,
     HabitFormComponent,
     HabitListComponent,
@@ -105,11 +96,8 @@ export function tokenGetter() {
     MatFaqAdminComponent,
     MatFaqComponent,
     DashboardHabitEditComponent,
-    NgxDashboardHabitEditComponent,
     PasswordChangeComponentDash,
-    NgxPasswordChangeComponentDash,
-    UserDataChangeComponent,
-    NgxUserDataChangeComponent
+    UserDataChangeComponent
   ],
   imports: [
     BrowserModule,
@@ -133,7 +121,6 @@ export function tokenGetter() {
     ReactiveFormsModule,
     MatDialogModule,
     FormsModule,
-
     ThemeModule.forRoot(),
     AuthModule.forRoot(),
 
@@ -172,19 +159,14 @@ export function tokenGetter() {
   entryComponents: [
     PasswordChangeComponent,
     DashboardHabitEditComponent,
-    NgxDashboardHabitEditComponent,
     PasswordChangeComponentDash,
     UserDataChangeComponent,
-    NgxUserDataChangeComponent
   ],
   exports: [
     PasswordChangeComponent,
     DashboardHabitEditComponent,
-    NgxDashboardHabitEditComponent,
     PasswordChangeComponentDash,
-    NgxPasswordChangeComponentDash,
-    UserDataChangeComponent,
-    NgxUserDataChangeComponent
+    UserDataChangeComponent
   ]
 })
 export class AppModule {

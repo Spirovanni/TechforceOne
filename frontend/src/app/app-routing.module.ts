@@ -7,7 +7,7 @@ import {ExtraOptions, RouterModule, Routes} from '@angular/router';
 import {LoginComponent} from './login/login.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {AuthGuard} from './auth.guard';
-import {HomeModule} from './home/home.module'
+import {HomeModule} from './home/home.module';
 import {FaqComponent} from './faq/faq.component';
 import {HabitFormComponent} from './habit-form/habit-form.component';
 import {HabitListComponent} from './habit-list/habit-list.component';
